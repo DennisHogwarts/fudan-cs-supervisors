@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="复旦大学计算机科学学院导师信息展示 - 研究方向、学术指标、师生评价一站式查询">
+    <title>复旦CS导师指南 | Fudan CS Supervisor Guide</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="bg-gradient"></div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle" title="切换主题">
+        <span class="icon-moon">🌙</span>
+        <span class="icon-sun">☀️</span>
+    </button>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>复旦CS导师指南</h1>
+        <p class="subtitle">计算机科学学院导师综合信息平台 — 学术实力 · 师生关系 · 实习政策</p>
+        <div class="stats-bar">
+            <div class="stat-item">
+                <span class="stat-number blue" id="statTotal">0</span>
+                <span class="stat-label">导师总数</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number green" id="statGood">0</span>
+                <span class="stat-label">广受好评</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number amber" id="statMixed">0</span>
+                <span class="stat-label">评价一般</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number red" id="statBad">0</span>
+                <span class="stat-label">建议慎重</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Controls -->
+    <div class="controls">
+        <div class="search-container">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input type="text" class="search-input" id="searchInput" placeholder="搜索导师姓名、研究方向、关键词...">
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn" data-tab="all">📊 全部 <span class="count">0</span></button>
+            <button class="tab-btn" data-tab="good">🌟 广受好评 <span class="count">0</span></button>
+            <button class="tab-btn" data-tab="mixed">⚠️ 评价一般 <span class="count">0</span></button>
+            <button class="tab-btn" data-tab="bad">🚫 建议慎重 <span class="count">0</span></button>
+        </div>
+
+        <div class="filter-row">
+            <select class="filter-select" id="deptFilter">
+                <option value="">全部院系 / 实验室</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Card Grid -->
+    <div class="card-grid" id="cardGrid">
+        <div class="no-results">
+            <div style="font-size:3rem;margin-bottom:12px">⏳</div>
+            正在加载导师数据...
+        </div>
+    </div>
+
+    <!-- Scroll to top -->
+    <button class="scroll-top" id="scrollTop" title="回到顶部">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15" />
+        </svg>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>数据来源于公开信息与匿名评价，仅供参考。选择导师请结合自身情况综合考量。</p>
+        <p style="margin-top:8px">点击卡片可展开查看详细评价 💡</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
